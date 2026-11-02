@@ -1,8 +1,27 @@
 
 var Diff0 = Packages.mindustry.game.Difficulty;
 
-var erad = Diff0.valueOf("eradication");
+var cas = Diff0.valueOf("casual");
+cas.enemyHealthMultiplier = 0.20;
+cas.enemySpawnMultiplier = 1;
+cas.waveTimeMultiplier = 0.1;
 
+var eas = Diff0.valueOf("easy");
+eas.enemyHealthMultiplier = 1;
+eas.enemySpawnMultiplier = 1;
+eas.waveTimeMultiplier = 0.2;
+
+var norm = Diff0.valueOf("normal");
+norm.enemyHealthMultiplier = 2;
+norm.enemySpawnMultiplier = 2;
+norm.waveTimeMultiplier = 0.4;
+
+var har = Diff0.valueOf("hard");
+har.enemyHealthMultiplier = 2;
+har.enemySpawnMultiplier = 4;
+har.waveTimeMultiplier = 0.2;
+
+var erad = Diff0.valueOf("eradication");
 erad.enemyHealthMultiplier = 16;
 erad.enemySpawnMultiplier = 1;
 erad.waveTimeMultiplier = 0.04;
