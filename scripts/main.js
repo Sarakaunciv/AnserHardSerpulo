@@ -26,23 +26,47 @@ erad.enemyHealthMultiplier = 16;
 erad.enemySpawnMultiplier = 1;
 erad.waveTimeMultiplier = 0.04;
 
+// All campain sector
+const campaignSectors = [97, 223, 166, 213, 164, 165, 86, 173, 170, 143, 219, 65, 75, 142, 169, 64, 204, 98, 145, 85, 271, 228, 41, 217, 266, 214, 95, 221, 99, 23];
+const attackSectors = [0, 6, 13, 16, 19, 20, 24, 27, 30, 47, 55, 66, 67, 69, 76, 92, 94, 111, 116, 127, 133, 161, 162, 176, 180, 185, 191, 192, 197, 200, 207, 225, 230, 240, 242, 243, 244, 245, 246, 247, 248, 254, 259, 263, 265];
+
 Events.on(ClientLoadEvent, () => {
-	// All campain sector
-	const campaignSectors = [170, 64, 219, 221, 23, 41, 223, 214, 65, 97, 86, 85, 98, 145, 213, 164, 142, 99, 169, 75, 266, 228, 165, 143, 271, 217];
-	
 	for (let i = 0; i < Planets.serpulo.sectors.size; i++)
 	{
-		let sector = Planets.serpulo.sectors.get(i);
-		if (sector != null)
+		if (!campaignSectors.includes(i))
 		{
-			if (!campaignSectors.includes(i))
+			let sector = Planets.serpulo.sectors.get(i);
+			if (sector != null)
 			{
-				if (sector.threat >= 1)
+				if (attackSectors.includes(i))
 				{
 					sector.threat = 1.5;
 				}
-				if (sector.generateEnemyBase == false)
+				else
 				{
+					sector.threat = 0.75;
+					sector.generateEnemyBase = true;
+				}
+			}
+		}
+	}
+});
+
+Events.on(SectorCaptureEvent, () => {
+	for (let i = 0; i < Planets.serpulo.sectors.size; i++)
+	{
+		if (!campaignSectors.includes(i))
+		{
+			let sector = Planets.serpulo.sectors.get(i);
+			if (sector != null)
+			{
+				if (attackSectors.includes(i))
+				{
+					sector.threat = 1.5;
+				}
+				else
+				{
+					sector.threat = 0.75;
 					sector.generateEnemyBase = true;
 				}
 			}
