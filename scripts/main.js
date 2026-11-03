@@ -40,11 +40,11 @@ Events.on(ClientLoadEvent, () => {
 			{
 				if (attackSectors.includes(i))
 				{
-					sector.threat = 1.5;
+					sector.threat = 0.75;
 				}
 				else
 				{
-					sector.threat = 0.75;
+					sector.threat = 1.5;
 					sector.generateEnemyBase = true;
 				}
 			}
@@ -62,11 +62,11 @@ Events.on(SectorCaptureEvent, () => {
 			{
 				if (attackSectors.includes(i))
 				{
-					sector.threat = 1.5;
+					sector.threat = 0.75;
 				}
 				else
 				{
-					sector.threat = 0.75;
+					sector.threat = 1.5;
 					sector.generateEnemyBase = true;
 				}
 			}
