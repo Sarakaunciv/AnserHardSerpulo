@@ -2,15 +2,19 @@
     "name": "Anser Hard Serpulo",
     "displayName": "Anser Hard Serpulo",
     "author": "SarakaUnciv",
-    "description": "WARNING unfair and unbalance
-	Should be play with my other Anser mod
+    "description": "It is unfair
+	Should be play with my other Anser mod or your cheat mod
 	
 	Make all Serpulo numbered sector enemy base
+	Vanilla enemy base sector have Eradication threat while other sector have extreme threat
 	Eradication difficulty give x16 hp and x0.04 wave timer
 	
-	It took me 4 attempt to beat Nuclear Production Complex
+	It took me 3 attempt to beat Nuclear Production Complex with my OP mod
+	And then lost NPC after enemy send attack 1 time
 	
-	This mod was made in build 160.4",
-    "version": "1.1",
+	This mod was made in build 160.4
+	If you want to make every sector to be Eradication threat instead of Extreme
+	You can change my script change threat from 0.75 to 1.0 or higher",
+    "version": "1.2",
     "minGameVersion": 147
 }
