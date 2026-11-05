@@ -1,20 +1,19 @@
 {
     "name": "Anser Hard Serpulo",
-    "displayName": "Anser Hard Serpulo",
+    "displayName": "Anser Custom Difficulty",
     "author": "SarakaUnciv",
-    "description": "Numbered sector that does not have enemy base in vanilla this mod will make them generate base
-	It is unfair and should be play with my other Anser mod or your cheat mod
+    "description": "1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
-	Make all Serpulo numbered sector enemy base
-	Vanilla enemy base sector now have Extreme threat while other sector now have Eradication threat
-	Vanilla enemy base sector map does not effect by threat level meaning they still have the same building (and wave?) as in vanilla
+	2. Make all serpulo sector [[]#ff0000]enemy base[[]] and can be [[]#00ffff]turn off[[]] and [[]#ff8000]require restart[[]]
+	Make all Serpulo numbered sector [[]#ff0000]enemy base[[]]
+	Vanilla enemy base sector now have [[]#ff8000]Extreme[[]] threat while other sector now have [[]#ff0000]Eradication[[]] threat
+	[[]#a0ffa0]Vanilla enemy base sector map does not effect by threat level meaning they still have the same building (and wave?) as in vanilla[[]]
 	Numbered sector that does not have enemy base in vanilla this mod will make them generate base
-	Eradication difficulty give x16 hp and x0.04 wave timer
 	
 	It took me 3 attempt to beat Nuclear Production Complex with my OP Anser mod
 	And then lost NPC after enemy send attack 1 time
 	
-	This mod was made in build 160.4",
-    "version": "1.3",
+	This mod was made in build 160.7",
+    "version": "2.0",
     "minGameVersion": 147
 }
