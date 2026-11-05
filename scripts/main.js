@@ -85,7 +85,7 @@ Events.on(ClientLoadEvent, () => {
 		setSetting(2);
 		return value + "%";
 	});
-	UISetGame.sliderPref("waveTimeMultCas", 100, 0, 100, 4, (value) => {
+	UISetGame.sliderPref("waveTimeMultCas", 100, 0, 100, 1, (value) => {
 		setSetting(3);
 		if (value == 0) {return "WARNING";}
 		return value + "%";
