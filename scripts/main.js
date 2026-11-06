@@ -27,6 +27,7 @@ diffErad.waveTimeMultiplier = 0.04;
 // All campain sector
 const campaignSectors = [97, 223, 166, 213, 164, 165, 86, 173, 170, 143, 219, 65, 75, 142, 169, 64, 204, 98, 145, 85, 271, 228, 41, 217, 266, 214, 95, 221, 99, 23];
 const attackSectors = [0, 6, 13, 16, 19, 20, 24, 27, 30, 47, 55, 66, 67, 69, 76, 92, 94, 111, 116, 127, 133, 161, 162, 176, 180, 185, 191, 192, 197, 200, 207, 225, 230, 240, 242, 243, 244, 245, 246, 247, 248, 254, 259, 263, 265];
+const attackEradSectors = [24, 30, 54, 55, 67, 162, 191, 254, 263, 264, 242, 243, 244, 245, 246, 247];
 
 function setEnemyBase()
 {
@@ -35,19 +36,51 @@ function setEnemyBase()
 	{
 		for (let i = 0; i < Planets.serpulo.sectors.size; i++)
 		{
-			if (!campaignSectors.includes(i))
+			if (i != 27 && !campaignSectors.includes(i))
 			{
 				let sector = Planets.serpulo.sectors.get(i);
 				if (sector != null)
 				{
-					if (attackSectors.includes(i))
+					if (attackSectors.includes(i) || attackEradSectors.includes(i))
 					{
 						sector.threat = 0.75;
+						if (attackEradSectors.includes(i))
+						{
+							sector.info.icon = "status-melting-ui";
+						}
+						else
+						{
+							sector.info.icon = "status-shocked-ui";
+						}
 					}
 					else
 					{
 						sector.threat = 1.5;
 						sector.generateEnemyBase = true;
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		for (let i = 0; i < Planets.serpulo.sectors.size; i++)
+		{
+			if (i != 27 && !campaignSectors.includes(i))
+			{
+				let sector = Planets.serpulo.sectors.get(i);
+				if (sector != null)
+				{
+					if (attackSectors.includes(i) || attackEradSectors.includes(i))
+					{
+						if (attackEradSectors.includes(i))
+						{
+							sector.info.icon = "status-melting-ui";
+						}
+						else
+						{
+							sector.info.icon = "status-shocked-ui";
+						}
 					}
 				}
 			}

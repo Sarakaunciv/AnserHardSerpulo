@@ -10,6 +10,10 @@
 	[[]#a0ffa0]Vanilla enemy base sector map does not effect by threat level meaning they still have the same building (and wave?) as in vanilla[[]]
 	Numbered sector that does not have enemy base in vanilla this mod will make them generate base
 	
+	3. Mark all serpulo vanilla [[]#ff0000]enemy base[[]] sector with icon
+	[[]#ff0000]Eradication[[]] threat is marked with melting other threat is marked with shocked
+	[[]#ff0080]WARNING this mod will overwrite icon on all serpulo vanilla enemy base sector and can't be turn off[[]]
+	
 	[[]#ff0000]Check out my other Anser mod name[[]]
 	[[]#ffff00]Comment on my Youtube if you wanna talk to me Link in repo[[]]
 	
@@ -17,6 +21,6 @@
 	And then lost NPC after enemy send attack 1 time
 	
 	This mod was made in build 160.7",
-    "version": "2.0",
+    "version": "2.1",
     "minGameVersion": 147
 }
