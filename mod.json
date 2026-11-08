@@ -4,13 +4,15 @@
     "author": "SarakaUnciv",
     "description": "1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
-	2. Make all serpulo sector [[]#ff0000]enemy base[[]] and can be [[]#00ffff]turn off[[]] and [[]#ff8000]require restart[[]]
+	2. [[]#00ffff]configurable[[]] enemy [[]#ffff00]production[[]] speed up to [[]#ff0000]6400%[[]]
+	
+	3. Make all serpulo sector [[]#ff0000]enemy base[[]] and can be [[]#00ffff]turn off[[]] and [[]#ff8000]require restart[[]]
 	Make all Serpulo numbered sector [[]#ff0000]enemy base[[]]
 	Vanilla enemy base sector now have [[]#ff8000]Extreme[[]] threat while other sector now have [[]#ff0000]Eradication[[]] threat
 	[[]#a0ffa0]Vanilla enemy base sector map does not effect by threat level meaning they still have the same building (and wave?) as in vanilla[[]]
 	Numbered sector that does not have enemy base in vanilla this mod will make them generate base
 	
-	3. Mark all serpulo vanilla [[]#ff0000]enemy base[[]] sector with icon
+	4. Mark all serpulo vanilla [[]#ff0000]enemy base[[]] sector with icon
 	[[]#ff0000]Eradication[[]] threat is marked with melting other threat is marked with shocked
 	[[]#ff0080]WARNING this mod will overwrite icon on all serpulo vanilla enemy base sector and can't be turn off[[]]
 	

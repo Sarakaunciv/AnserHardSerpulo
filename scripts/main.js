@@ -92,25 +92,34 @@ function setSetting(id)
 {
 	if (id == 1)
 	{
-		let healthMultCas = Core.settings.getInt("healthMultCas", 50);
+		let healthMultCas = Core.settings.getInt("healthMultCas", 100);
 		diffCas.enemyHealthMultiplier = 0.01 * healthMultCas;
 	}
 	if (id == 2)
 	{
-		let spawnMultCas = Core.settings.getInt("spawnMultCas", 50);
+		let spawnMultCas = Core.settings.getInt("spawnMultCas", 100);
 		diffCas.enemySpawnMultiplier = 0.01 * spawnMultCas;
 	}
 	if (id == 3)
 	{
-		let waveTimeMultCas = Core.settings.getInt("waveTimeMultCas", 50);
+		let waveTimeMultCas = Core.settings.getInt("waveTimeMultCas", 100);
 		diffCas.waveTimeMultiplier = 0.01 * waveTimeMultCas;
 	}
+}
+
+function setEnemyUnitProduction()
+{
+	const gameStateRules = Vars.state.rules;
+	let enemyUnitProductionMult = Core.settings.getInt("enemyUnitProductionMult", 100);
+	
+	gameStateRules.teams.get(gameStateRules.waveTeam).unitCostMultiplier = 100 / enemyUnitProductionMult;
+	gameStateRules.teams.get(gameStateRules.waveTeam).unitBuildSpeedMultiplier = enemyUnitProductionMult / 100;
 }
 
 Events.on(ClientLoadEvent, () => {
 	const UISetGame = Vars.ui.settings.game;
 	
-	UISetGame.sliderPref("healthMultCas", 100, 50, 2000, 50, (value) => {
+	UISetGame.sliderPref("healthMultCas", 100, 50, 6400, 50, (value) => {
 		setSetting(1);
 		return value + "%";
 	});
@@ -126,12 +135,23 @@ Events.on(ClientLoadEvent, () => {
 	
 	UISetGame.checkPref("serpuloEnemyBaseInjection", true, (value) => {});
 	
+	UISetGame.sliderPref("enemyUnitProductionMult", 100, 0, 6400, 100, (value) => {
+		setEnemyUnitProduction();
+		return value + "%";
+	});
+	
 	setSetting(1);
 	setSetting(2);
 	setSetting(3);
 	setEnemyBase();
+	
+	// Vars.ui.consolefrag.addMessage("Mod Loaded")
 });
 
 Events.on(SectorCaptureEvent, () => {
 	setEnemyBase()
+});
+
+Events.on(RulesLoadEvent, () => {
+	setEnemyUnitProduction();
 });
