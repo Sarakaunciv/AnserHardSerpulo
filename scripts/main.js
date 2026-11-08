@@ -169,12 +169,12 @@ Events.run(Trigger.update, () => {
 	}
 	else
 	{
-		if (setEnemyUnitProductionTime == 10)
+		if (setEnemyUnitProductionTime == 60)
 		{
 			setEnemyUnitProductionTime++;
 			setEnemyUnitProduction();
 		}
-		if (setEnemyUnitProductionTime < 10)
+		if (setEnemyUnitProductionTime < 60)
 		{
 			setEnemyUnitProductionTime++;
 		}

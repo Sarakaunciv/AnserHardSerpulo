@@ -5,6 +5,7 @@
     "description": "1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
 	2. [[]#00ffff]configurable[[]] enemy [[]#ffff00]production[[]] speed up to [[]#ff0000]6400%[[]]
+	Enemy production in most map [[]#ffff00]will begin after a while[[]] which [[]#ff0000]does not effect by this setting[[]]
 	
 	3. Make all serpulo sector [[]#ff0000]enemy base[[]] and can be [[]#00ffff]turn off[[]] and [[]#ff8000]require restart[[]]
 	Make all Serpulo numbered sector [[]#ff0000]enemy base[[]]
@@ -23,6 +24,6 @@
 	And then lost NPC after enemy send attack 1 time
 	
 	This mod was made in build 160.7",
-    "version": "2.3",
+    "version": "2.4",
     "minGameVersion": 147
 }
