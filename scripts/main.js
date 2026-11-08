@@ -109,11 +109,15 @@ function setSetting(id)
 
 function setEnemyUnitProduction()
 {
-	const gameStateRules = Vars.state.rules;
-	let enemyUnitProductionMult = Core.settings.getInt("enemyUnitProductionMult", 100);
-	
-	gameStateRules.teams.get(gameStateRules.waveTeam).unitCostMultiplier = 100 / enemyUnitProductionMult;
-	gameStateRules.teams.get(gameStateRules.waveTeam).unitBuildSpeedMultiplier = enemyUnitProductionMult / 100;
+	let enemyUnitProductionMultOn = Core.settings.getBool("enemyUnitProductionMultOn", true);
+	if (enemyUnitProductionMultOn)
+	{
+		const gameStateRules = Vars.state.rules;
+		let enemyUnitProductionMult = Core.settings.getInt("enemyUnitProductionMult", 100);
+		
+		gameStateRules.teams.get(gameStateRules.waveTeam).unitCostMultiplier = 100 / enemyUnitProductionMult;
+		gameStateRules.teams.get(gameStateRules.waveTeam).unitBuildSpeedMultiplier = enemyUnitProductionMult / 100;
+	}
 }
 
 Events.on(ClientLoadEvent, () => {
@@ -139,6 +143,7 @@ Events.on(ClientLoadEvent, () => {
 		setEnemyUnitProduction();
 		return value + "%";
 	});
+	UISetGame.checkPref("enemyUnitProductionMultOn", true, (value) => {});
 	
 	setSetting(1);
 	setSetting(2);
@@ -152,6 +157,26 @@ Events.on(SectorCaptureEvent, () => {
 	setEnemyBase()
 });
 
+var setEnemyUnitProductionTime = 0;
 Events.on(RulesLoadEvent, () => {
-	setEnemyUnitProduction();
+	setEnemyUnitProductionTime = 0;
+});
+Events.run(Trigger.update, () => {
+	if (!Vars.state.isGame())
+	{
+		setEnemyUnitProductionTime = 0;
+		return;
+	}
+	else
+	{
+		if (setEnemyUnitProductionTime == 10)
+		{
+			setEnemyUnitProductionTime++;
+			setEnemyUnitProduction();
+		}
+		if (setEnemyUnitProductionTime < 10)
+		{
+			setEnemyUnitProductionTime++;
+		}
+	}
 });
