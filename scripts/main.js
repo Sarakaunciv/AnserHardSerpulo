@@ -107,9 +107,9 @@ function setSetting(id)
 	}
 }
 
-function setEnemyUnitProduction()
+function setRulesEnemyUnitProduction()
 {
-	let enemyUnitProductionMultOn = Core.settings.getBool("enemyUnitProductionMultOn", true);
+	let enemyUnitProductionMultOn = Core.settings.getBool("enemyUnitProductionMultOn", false);
 	if (enemyUnitProductionMultOn)
 	{
 		const gameStateRules = Vars.state.rules;
@@ -117,6 +117,19 @@ function setEnemyUnitProduction()
 		
 		gameStateRules.teams.get(gameStateRules.waveTeam).unitCostMultiplier = 100 / enemyUnitProductionMult;
 		gameStateRules.teams.get(gameStateRules.waveTeam).unitBuildSpeedMultiplier = enemyUnitProductionMult / 100;
+	}
+}
+
+function setRulesEnemyDamage()
+{
+	let enemyDamageMultOn = Core.settings.getBool("enemyDamageMultOn", false);
+	if (enemyDamageMultOn)
+	{
+		const gameStateRules = Vars.state.rules;
+		let enemyDamageMult = Core.settings.getInt("enemyDamageMult", 100);
+		
+		gameStateRules.teams.get(gameStateRules.waveTeam).unitDamageMultiplier = enemyDamageMult / 100;
+		gameStateRules.teams.get(gameStateRules.waveTeam).blockDamageMultiplier = enemyDamageMult / 100;
 	}
 }
 
@@ -140,10 +153,16 @@ Events.on(ClientLoadEvent, () => {
 	UISetGame.checkPref("serpuloEnemyBaseInjection", true, (value) => {});
 	
 	UISetGame.sliderPref("enemyUnitProductionMult", 100, 0, 6400, 100, (value) => {
-		setEnemyUnitProduction();
+		setRulesEnemyUnitProduction();
 		return value + "%";
 	});
-	UISetGame.checkPref("enemyUnitProductionMultOn", true, (value) => {});
+	UISetGame.checkPref("enemyUnitProductionMultOn", false, (value) => {});
+	
+	UISetGame.sliderPref("enemyDamageMult", 100, 0, 6400, 100, (value) => {
+		setRulesEnemyDamage();
+		return value + "%";
+	});
+	UISetGame.checkPref("enemyDamageMultOn", false, (value) => {});
 	
 	setSetting(1);
 	setSetting(2);
@@ -157,26 +176,27 @@ Events.on(SectorCaptureEvent, () => {
 	setEnemyBase()
 });
 
-var setEnemyUnitProductionTime = 0;
+var setRulesTime = 0;
 Events.on(RulesLoadEvent, () => {
-	setEnemyUnitProductionTime = 0;
+	setRulesTime = 0;
 });
 Events.run(Trigger.update, () => {
 	if (!Vars.state.isGame())
 	{
-		setEnemyUnitProductionTime = 0;
+		setRulesTime = 0;
 		return;
 	}
 	else
 	{
-		if (setEnemyUnitProductionTime == 60)
+		if (setRulesTime == 60)
 		{
-			setEnemyUnitProductionTime++;
-			setEnemyUnitProduction();
+			setRulesTime++;
+			setRulesEnemyUnitProduction();
+			setRulesEnemyDamage();
 		}
-		if (setEnemyUnitProductionTime < 60)
+		if (setRulesTime < 60)
 		{
-			setEnemyUnitProductionTime++;
+			setRulesTime++;
 		}
 	}
 });
