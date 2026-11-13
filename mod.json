@@ -2,7 +2,9 @@
     "name": "Anser Hard Serpulo",
     "displayName": "Anser Custom Difficulty",
     "author": "SarakaUnciv",
-    "description": "1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
+    "description": "V.2.7 fix bug that ProductionMult not active Automatically
+	
+	1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
 	2.1 [[]#00ffff]configurable[[]] enemy [[]#ffff00]production[[]] speed up to [[]#ff0000]6400%[[]]
 	Enemy production in most map [[]#ffff00]will begin after a while[[]] which [[]#ff0000]does not effect by this setting[[]]
@@ -28,6 +30,6 @@
 	And then lost NPC after enemy send attack 1 time
 	
 	This mod was made in build 160.7",
-    "version": "2.6",
+    "version": "2.7",
     "minGameVersion": 147
 }

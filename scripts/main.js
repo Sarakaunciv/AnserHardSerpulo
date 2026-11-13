@@ -188,14 +188,9 @@ Events.run(Trigger.update, () => {
 	}
 	else
 	{
-		if (setRulesTime == 600)
+		if (setRulesTime > 600)
 		{
-			setRulesTime = 61;
-			return;
-		}
-		if (setRulesTime == 60)
-		{
-			setRulesTime++;
+			setRulesTime = 0;
 			setRulesEnemyUnitProduction();
 			setRulesEnemyDamage();
 		}
