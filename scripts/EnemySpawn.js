@@ -287,6 +287,9 @@ function resetCount()
 	flareU = 0;
 	rissoU = 0;
 	retusaU = 0;
+	stellU = 0;
+	eludeU = 0;
+	meruiU = 0;
 }
 
 function countUnit(unit, enemy)
