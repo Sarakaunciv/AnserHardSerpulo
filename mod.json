@@ -4,6 +4,8 @@
     "author": "SarakaUnciv",
     "description": "V.2.7 fix bug that ProductionMult not active Automatically
 	
+	0. This mod [[]#00ff00]merge[[]] enemy unit into next tier unit [[]#ffff00]To prevent lag of 2000+ unit[[]]
+	
 	1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
 	2.1 [[]#00ffff]configurable[[]] enemy [[]#ffff00]production[[]] speed up to [[]#ff0000]6400%[[]]
@@ -25,11 +27,9 @@
 	
 	[[]#ff0000]Check out my other Anser mod name[[]]
 	[[]#ffff00]Comment on my Youtube if you wanna talk to me Link in repo[[]]
-	
-	It took me 3 attempt to beat Nuclear Production Complex with my OP Anser mod
-	And then lost NPC after enemy send attack 1 time
+	[[]#ffc0c0]I post update of all of my mod on Mindustry Discord modding-forum search Anser you will find[[]]
 	
 	This mod was made in build 160.7",
-    "version": "2.7",
+    "version": "3.0",
     "minGameVersion": 147
 }
