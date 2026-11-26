@@ -1,13 +1,13 @@
 
-const unitTier2E = 25;
-const unitTier3E = 50;
-const unitTier4E = 75;
-const unitTier5E = 100;
+const unitTier2E = 15;
+const unitTier3E = 40;
+const unitTier4E = 80;
+const unitTier5E = 120;
 
 const unitTier2U = 3;
-const unitTier3U = 9;
-const unitTier4U = 27;
-const unitTier5U = 81;
+const unitTier3U = 10;
+const unitTier4U = 35;
+const unitTier5U = 150;
 
 var daggerU = 0;
 function Fdagger(unit, U, enemy)
