@@ -519,7 +519,7 @@ function countUnit(unit, enemy)
 	}
 }
 
-function tinyUnitHitbox()
+function noUnitCollision()
 {
 	UnitTypes.dagger.physics = false;
 	UnitTypes.mace.physics = false;
@@ -587,11 +587,11 @@ Events.on(ClientLoadEvent, () => {
 	
 	UISetGame.checkPref("mergeEnemy", true, (value) => {});
 	
-	UISetGame.checkPref("tinyUnitHitbox", false, (value) => {});
+	UISetGame.checkPref("noUnitCollision", true, (value) => {});
 	
-	if (Core.settings.getBool("tinyUnitHitbox", false))
+	if (Core.settings.getBool("noUnitCollision", true))
 	{
-		tinyUnitHitbox();
+		noUnitCollision();
 	}
 });
 
