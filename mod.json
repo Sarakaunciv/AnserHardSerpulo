@@ -6,8 +6,8 @@
 	
 	-1. This mod [[]#00ff00]merge[[]] enemy unit into next tier unit [[]#ffff00]To prevent lag of 2000+ unit[[]] and can be [[]#00ffff]turn off[[]]
 	
-	0. This mod have setting that make all vanilla unit hitbox small to prevent big unit from get stuck can be [[]#00ffff]turn on[[]] [[]#ff8000]require restart[[]]
-	[[]#80ff80]This also make unit take knockback base on thier 'size'[[]]
+	0. This mod have setting that [[]#ff0000]disable[[]] all vanilla unit collision hitbox to prevent big unit from get stuck can be [[]#00ffff]turn on[[]] [[]#ff8000]require restart[[]]
+	[[]#80ff80]This setting only effect unit to unit collision The bullet to unit is still the same[[]]
 	
 	1. This mod let you [[]#ffff00]customize[[]] [[]#ffff00]Casual[[]] Difficulty in [[]#00ffff]game setting[[]] also make other Difficulty [[]#ff0000]harder[[]]
 	
@@ -33,6 +33,6 @@
 	[[]#ffc0c0]I post update of all of my mod on Mindustry Discord modding-forum search Anser you will find[[]]
 	
 	This mod was made in build 160.7",
-    "version": "3.1",
+    "version": "3.2",
     "minGameVersion": 147
 }

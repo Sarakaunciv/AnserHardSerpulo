@@ -521,125 +521,65 @@ function countUnit(unit, enemy)
 
 function tinyUnitHitbox()
 {
-	UnitTypes.dagger.hitSize = 8;
-	UnitTypes.mace.hitSize = 8;
-	UnitTypes.fortress.hitSize = 8;
-	UnitTypes.scepter.hitSize = 8;
-	UnitTypes.reign.hitSize = 8;
+	UnitTypes.dagger.physics = false;
+	UnitTypes.mace.physics = false;
+	UnitTypes.fortress.physics = false;
+	UnitTypes.scepter.physics = false;
+	UnitTypes.reign.physics = false;
 	
-	UnitTypes.crawler.hitSize = 8;
-	UnitTypes.atrax.hitSize = 8;
-	UnitTypes.spiroct.hitSize = 8;
-	UnitTypes.arkyid.hitSize = 8;
-	UnitTypes.toxopid.hitSize = 8;
+	UnitTypes.crawler.physics = false;
+	UnitTypes.atrax.physics = false;
+	UnitTypes.spiroct.physics = false;
+	UnitTypes.arkyid.physics = false;
+	UnitTypes.toxopid.physics = false;
 	
-	UnitTypes.nova.hitSize = 8;
-	UnitTypes.pulsar.hitSize = 8;
-	UnitTypes.quasar.hitSize = 8;
-	UnitTypes.vela.hitSize = 8;
-	UnitTypes.corvus.hitSize = 8;
+	UnitTypes.nova.physics = false;
+	UnitTypes.pulsar.physics = false;
+	UnitTypes.quasar.physics = false;
+	UnitTypes.vela.physics = false;
+	UnitTypes.corvus.physics = false;
 	
-	UnitTypes.flare.hitSize = 8;
-	UnitTypes.horizon.hitSize = 8;
-	UnitTypes.zenith.hitSize = 8;
-	UnitTypes.antumbra.hitSize = 8;
-	UnitTypes.eclipse.hitSize = 8;
+	UnitTypes.flare.physics = false;
+	UnitTypes.horizon.physics = false;
+	UnitTypes.zenith.physics = false;
+	UnitTypes.antumbra.physics = false;
+	UnitTypes.eclipse.physics = false;
 	
-	UnitTypes.risso.hitSize = 8;
-	UnitTypes.minke.hitSize = 8;
-	UnitTypes.bryde.hitSize = 8;
-	UnitTypes.sei.hitSize = 8;
-	UnitTypes.omura.hitSize = 8;
+	UnitTypes.risso.physics = false;
+	UnitTypes.minke.physics = false;
+	UnitTypes.bryde.physics = false;
+	UnitTypes.sei.physics = false;
+	UnitTypes.omura.physics = false;
 	
-	UnitTypes.retusa.hitSize = 8;
-	UnitTypes.oxynoe.hitSize = 8;
-	UnitTypes.cyerce.hitSize = 8;
-	UnitTypes.aegires.hitSize = 8;
-	UnitTypes.navanax.hitSize = 8;
+	UnitTypes.retusa.physics = false;
+	UnitTypes.oxynoe.physics = false;
+	UnitTypes.cyerce.physics = false;
+	UnitTypes.aegires.physics = false;
+	UnitTypes.navanax.physics = false;
 	
-	UnitTypes.stell.hitSize = 8;
-	UnitTypes.locus.hitSize = 8;
-	UnitTypes.precept.hitSize = 8;
-	UnitTypes.vanquish.hitSize = 8;
-	UnitTypes.conquer.hitSize = 8;
+	UnitTypes.stell.physics = false;
+	UnitTypes.locus.physics = false;
+	UnitTypes.precept.physics = false;
+	UnitTypes.vanquish.physics = false;
+	UnitTypes.conquer.physics = false;
 	
-	UnitTypes.elude.hitSize = 8;
-	UnitTypes.avert.hitSize = 8;
-	UnitTypes.obviate.hitSize = 8;
-	UnitTypes.quell.hitSize = 8;
-	UnitTypes.disrupt.hitSize = 8;
+	UnitTypes.elude.physics = false;
+	UnitTypes.avert.physics = false;
+	UnitTypes.obviate.physics = false;
+	UnitTypes.quell.physics = false;
+	UnitTypes.disrupt.physics = false;
 	
-	UnitTypes.merui.hitSize = 8;
-	UnitTypes.cleroi.hitSize = 8;
-	UnitTypes.anthicus.hitSize = 8;
-	UnitTypes.tecta.hitSize = 8;
-	UnitTypes.collaris.hitSize = 8;
+	UnitTypes.merui.physics = false;
+	UnitTypes.cleroi.physics = false;
+	UnitTypes.anthicus.physics = false;
+	UnitTypes.tecta.physics = false;
+	UnitTypes.collaris.physics = false;
 	
-	UnitTypes.mono.hitSize = 8;
-	UnitTypes.poly.hitSize = 8;
-	UnitTypes.mega.hitSize = 8;
-	UnitTypes.quad.hitSize = 8;
-	UnitTypes.oct.hitSize = 8;
-	
-	UnitTypes.dagger.knockbackMultiplier = 1;
-	UnitTypes.mace.knockbackMultiplier = 0.5;
-	UnitTypes.fortress.knockbackMultiplier = 0.2;
-	UnitTypes.scepter.knockbackMultiplier = 0.08;
-	UnitTypes.reign.knockbackMultiplier = 0.02;
-	
-	UnitTypes.crawler.knockbackMultiplier = 1;
-	UnitTypes.atrax.knockbackMultiplier = 0.5;
-	UnitTypes.spiroct.knockbackMultiplier = 0.2;
-	UnitTypes.arkyid.knockbackMultiplier = 0.08;
-	UnitTypes.toxopid.knockbackMultiplier = 0.02;
-	
-	UnitTypes.nova.knockbackMultiplier = 1;
-	UnitTypes.pulsar.knockbackMultiplier = 0.5;
-	UnitTypes.quasar.knockbackMultiplier = 0.2;
-	UnitTypes.vela.knockbackMultiplier = 0.08;
-	UnitTypes.corvus.knockbackMultiplier = 0.02;
-	
-	UnitTypes.flare.knockbackMultiplier = 1;
-	UnitTypes.horizon.knockbackMultiplier = 0.5;
-	UnitTypes.zenith.knockbackMultiplier = 0.2;
-	UnitTypes.antumbra.knockbackMultiplier = 0.08;
-	UnitTypes.eclipse.knockbackMultiplier = 0.02;
-	
-	UnitTypes.risso.knockbackMultiplier = 1;
-	UnitTypes.minke.knockbackMultiplier = 0.5;
-	UnitTypes.bryde.knockbackMultiplier = 0.2;
-	UnitTypes.sei.knockbackMultiplier = 0.08;
-	UnitTypes.omura.knockbackMultiplier = 0.02;
-	
-	UnitTypes.retusa.knockbackMultiplier = 1;
-	UnitTypes.oxynoe.knockbackMultiplier = 0.5;
-	UnitTypes.cyerce.knockbackMultiplier = 0.2;
-	UnitTypes.aegires.knockbackMultiplier = 0.08;
-	UnitTypes.navanax.knockbackMultiplier = 0.02;
-	
-	UnitTypes.stell.knockbackMultiplier = 1;
-	UnitTypes.locus.knockbackMultiplier = 0.5;
-	UnitTypes.precept.knockbackMultiplier = 0.2;
-	UnitTypes.vanquish.knockbackMultiplier = 0.08;
-	UnitTypes.conquer.knockbackMultiplier = 0.02;
-	
-	UnitTypes.elude.knockbackMultiplier = 1;
-	UnitTypes.avert.knockbackMultiplier = 0.5;
-	UnitTypes.obviate.knockbackMultiplier = 0.2;
-	UnitTypes.quell.knockbackMultiplier = 0.08;
-	UnitTypes.disrupt.knockbackMultiplier = 0.02;
-	
-	UnitTypes.merui.knockbackMultiplier = 1;
-	UnitTypes.cleroi.knockbackMultiplier = 0.5;
-	UnitTypes.anthicus.knockbackMultiplier = 0.2;
-	UnitTypes.tecta.knockbackMultiplier = 0.08;
-	UnitTypes.collaris.knockbackMultiplier = 0.02;
-	
-	UnitTypes.mono.knockbackMultiplier = 1;
-	UnitTypes.poly.knockbackMultiplier = 0.5;
-	UnitTypes.mega.knockbackMultiplier = 0.2;
-	UnitTypes.quad.knockbackMultiplier = 0.08;
-	UnitTypes.oct.knockbackMultiplier = 0.02;
+	UnitTypes.mono.physics = false;
+	UnitTypes.poly.physics = false;
+	UnitTypes.mega.physics = false;
+	UnitTypes.quad.physics = false;
+	UnitTypes.oct.physics = false;
 }
 
 Events.on(ClientLoadEvent, () => {
