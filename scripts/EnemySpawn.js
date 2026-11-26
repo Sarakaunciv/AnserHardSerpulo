@@ -519,19 +519,101 @@ function countUnit(unit, enemy)
 	}
 }
 
-Events.on(UnitUnloadEvent, event => {
-	const gameStateRules = Vars.state.rules;
-	if (event.unit.team == gameStateRules.waveTeam)
+function tinyUnitHitbox()
+{
+	UnitTypes.dagger.hitSize = 1;
+	UnitTypes.mace.hitSize = 1;
+	UnitTypes.fortress.hitSize = 1;
+	UnitTypes.scepter.hitSize = 1;
+	UnitTypes.reign.hitSize = 1;
+	
+	UnitTypes.crawler.hitSize = 1;
+	UnitTypes.atrax.hitSize = 1;
+	UnitTypes.spiroct.hitSize = 1;
+	UnitTypes.arkyid.hitSize = 1;
+	UnitTypes.toxopid.hitSize = 1;
+	
+	UnitTypes.nova.hitSize = 1;
+	UnitTypes.pulsar.hitSize = 1;
+	UnitTypes.quasar.hitSize = 1;
+	UnitTypes.vela.hitSize = 1;
+	UnitTypes.corvus.hitSize = 1;
+	
+	UnitTypes.flare.hitSize = 1;
+	UnitTypes.horizon.hitSize = 1;
+	UnitTypes.zenith.hitSize = 1;
+	UnitTypes.antumbra.hitSize = 1;
+	UnitTypes.eclipse.hitSize = 1;
+	
+	UnitTypes.risso.hitSize = 1;
+	UnitTypes.minke.hitSize = 1;
+	UnitTypes.bryde.hitSize = 1;
+	UnitTypes.sei.hitSize = 1;
+	UnitTypes.omura.hitSize = 1;
+	
+	UnitTypes.retusa.hitSize = 1;
+	UnitTypes.oxynoe.hitSize = 1;
+	UnitTypes.cyerce.hitSize = 1;
+	UnitTypes.aegires.hitSize = 1;
+	UnitTypes.navanax.hitSize = 1;
+	
+	UnitTypes.stell.hitSize = 1;
+	UnitTypes.locus.hitSize = 1;
+	UnitTypes.precept.hitSize = 1;
+	UnitTypes.vanquish.hitSize = 1;
+	UnitTypes.conquer.hitSize = 1;
+	
+	UnitTypes.elude.hitSize = 1;
+	UnitTypes.avert.hitSize = 1;
+	UnitTypes.obviate.hitSize = 1;
+	UnitTypes.quell.hitSize = 1;
+	UnitTypes.disrupt.hitSize = 1;
+	
+	UnitTypes.merui.hitSize = 1;
+	UnitTypes.cleroi.hitSize = 1;
+	UnitTypes.anthicus.hitSize = 1;
+	UnitTypes.tecta.hitSize = 1;
+	UnitTypes.collaris.hitSize = 1;
+	
+	UnitTypes.mono.hitSize = 1;
+	UnitTypes.poly.hitSize = 1;
+	UnitTypes.mega.hitSize = 1;
+	UnitTypes.quad.hitSize = 1;
+	UnitTypes.oct.hitSize = 1;
+}
+
+Events.on(ClientLoadEvent, () => {
+	const UISetGame = Vars.ui.settings.game;
+	
+	UISetGame.checkPref("mergeEnemy", true, (value) => {});
+	
+	UISetGame.checkPref("tinyUnitHitbox", false, (value) => {});
+	
+	if (Core.settings.getBool("tinyUnitHitbox", false))
 	{
-		countUnit(event.unit, Vars.state.enemies);
+		tinyUnitHitbox();
+	}
+});
+
+Events.on(UnitUnloadEvent, event => {
+	if (Core.settings.getBool("mergeEnemy", true))
+	{
+		const gameStateRules = Vars.state.rules;
+		if (event.unit.team == gameStateRules.waveTeam)
+		{
+			countUnit(event.unit, Vars.state.enemies);
+		}
 	}
 });
 
 Events.on(UnitSpawnEvent, event => {
-	const gameStateRules = Vars.state.rules;
-	if (event.unit.team == gameStateRules.waveTeam)
+	if (Core.settings.getBool("mergeEnemy", true))
 	{
-		countUnit(event.unit, Vars.state.enemies);
+		const gameStateRules = Vars.state.rules;
+		if (event.unit.team == gameStateRules.waveTeam)
+		{
+			countUnit(event.unit, Vars.state.enemies);
+		}
 	}
 });
 
